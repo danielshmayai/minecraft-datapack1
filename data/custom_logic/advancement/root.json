@@ -1,0 +1,17 @@
+{
+  "display": {
+    "title": "Universal Logic Modifier",
+    "description": "Achievement tracking for ULM data pack",
+    "icon": {
+      "id": "minecraft:command_block"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/stone.png"
+  },
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

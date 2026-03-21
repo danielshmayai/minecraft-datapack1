@@ -1,0 +1,23 @@
+{
+  "parent": "custom_logic:root",
+  "display": {
+    "title": "Into the Fire",
+    "description": "Enter the Nether",
+    "icon": {
+      "id": "minecraft:obsidian"
+    },
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "minecraft:the_nether"
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom_logic:achievement/on_earn_enter_nether"
+  }
+}

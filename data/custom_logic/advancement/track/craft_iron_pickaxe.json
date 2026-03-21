@@ -1,0 +1,23 @@
+{
+  "parent": "custom_logic:root",
+  "display": {
+    "title": "Getting Serious",
+    "description": "Craft an iron pickaxe",
+    "icon": {
+      "id": "minecraft:iron_pickaxe"
+    },
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "minecraft:iron_pickaxe"
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom_logic:achievement/on_earn_craft_iron_pick"
+  }
+}

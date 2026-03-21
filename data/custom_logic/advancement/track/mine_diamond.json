@@ -1,0 +1,27 @@
+{
+  "parent": "custom_logic:root",
+  "display": {
+    "title": "Diamond Finder",
+    "description": "Mine a diamond ore",
+    "icon": {
+      "id": "minecraft:diamond"
+    },
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:diamond"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom_logic:achievement/on_earn_mine_diamond"
+  }
+}
