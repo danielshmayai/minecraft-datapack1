@@ -15,5 +15,5 @@ tellraw @s {"text":"  >> [Custom Drop Tables]","color":"aqua","bold":true,"click
 tellraw @s {"text":""}
 tellraw @s {"text":"  Extend via: custom_logic:main item.*","color":"dark_gray","italic":true}
 tellraw @s {"text":""}
-tellraw @s {"text":"  << [Back to Main Menu]","color":"gray","bold":true,"clickEvent":{"action":"run_command","value":"/function custom_logic:config"}}
+tellraw @s {"text":"  << [Back to Main Menu]","color":"gray","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config"}}
 tellraw @s {"text":"-------------------------","color":"light_purple"}

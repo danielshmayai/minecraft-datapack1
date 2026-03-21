@@ -23,4 +23,4 @@ execute unless data storage custom_logic:main block run data modify storage cust
 execute unless data storage custom_logic:profile_a {} run data modify storage custom_logic:profile_a set from storage custom_logic:main
 execute unless data storage custom_logic:profile_b {} run data modify storage custom_logic:profile_b set value {active_profile:"b",achievement:{enabled:1b,threshold:5,effect:"haste",duration:15,amplifier:1},block:{enabled:1b,type:"iron_ore",effect:"speed",duration:10,amplifier:0}}
 
-tellraw @a [{"text":"[ULM] ","color":"gold","bold":true},{"text":"Universal Logic Modifier loaded! ","color":"yellow"},{"text":"[Open Config]","color":"green","bold":true,"clickEvent":{"action":"run_command","value":"/function custom_logic:config"},"hoverEvent":{"action":"show_text","contents":{"text":"Click to open config menu"}}}]
+tellraw @a [{"text":"[ULM] ","color":"gold","bold":true},{"text":"Universal Logic Modifier loaded! ","color":"yellow"},{"text":"[Open Config]","color":"green","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config"}}]

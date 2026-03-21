@@ -15,5 +15,5 @@ tellraw @s {"text":"  >> [On Mob Nearby -> Effect]","color":"aqua","bold":true,"
 tellraw @s {"text":""}
 tellraw @s {"text":"  Extend via: custom_logic:main entity.*","color":"dark_gray","italic":true}
 tellraw @s {"text":""}
-tellraw @s {"text":"  << [Back to Main Menu]","color":"gray","bold":true,"clickEvent":{"action":"run_command","value":"/function custom_logic:config"}}
+tellraw @s {"text":"  << [Back to Main Menu]","color":"gray","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config"}}
 tellraw @s {"text":"---------------------------","color":"red"}
