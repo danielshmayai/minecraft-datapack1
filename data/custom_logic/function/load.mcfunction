@@ -12,15 +12,19 @@ scoreboard objectives add cl_temp dummy "Temp"
 
 # --- Initialize default storage (only if not already set) ---
 execute unless data storage custom_logic:main {active_profile:"a"} run data modify storage custom_logic:main active_profile set value "a"
-
-# Achievement defaults
 execute unless data storage custom_logic:main achievement run data modify storage custom_logic:main achievement set value {enabled:1b,threshold:10,effect:"speed",duration:10,amplifier:0}
-
-# Block-break defaults
 execute unless data storage custom_logic:main block run data modify storage custom_logic:main block set value {enabled:1b,type:"diamond_ore",effect:"strength",duration:10,amplifier:0}
 
 # --- Initialize profile snapshots ---
 execute unless data storage custom_logic:profile_a {} run data modify storage custom_logic:profile_a set from storage custom_logic:main
 execute unless data storage custom_logic:profile_b {} run data modify storage custom_logic:profile_b set value {active_profile:"b",achievement:{enabled:1b,threshold:5,effect:"haste",duration:15,amplifier:1},block:{enabled:1b,type:"iron_ore",effect:"speed",duration:10,amplifier:0}}
 
-tellraw @a [{"text":"[ULM] ","color":"gold","bold":true},{"text":"Universal Logic Modifier loaded! ","color":"yellow"},{"text":"[Open Config]","color":"green","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config"}}]
+# --- Clean up any leftover menu state ---
+kill @e[type=minecraft:marker,tag=cl_barrel]
+tag @a remove cl_config
+tag @a remove cl_menu_main
+tag @a remove cl_menu_ach
+tag @a remove cl_menu_block
+tag @a remove cl_menu_profiles
+
+tellraw @a [{"text":"[ULM] ","color":"gold","bold":true},{"text":"Universal Logic Modifier loaded! Use ","color":"yellow"},{"text":"/function custom_logic:config","color":"aqua"},{"text":" to open config.","color":"yellow"}]

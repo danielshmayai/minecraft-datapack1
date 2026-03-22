@@ -7,3 +7,6 @@ execute if data storage custom_logic:main {achievement:{enabled:1b}} as @a run f
 
 # --- Block Break Check (all players) ---
 execute if data storage custom_logic:main {block:{enabled:1b}} as @a run function custom_logic:block/check
+
+# --- Menu Detection (players with config open) ---
+execute as @a[tag=cl_config] run function custom_logic:menu/detect

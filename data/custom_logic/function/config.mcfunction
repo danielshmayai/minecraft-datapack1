@@ -1,18 +1,22 @@
 # ============================================================
-# Universal Logic Modifier - Main Config Menu
+# Universal Logic Modifier - Open Config (Barrel GUI)
 # ============================================================
 
-tellraw @s {"text":""}
-tellraw @s {"text":""}
-tellraw @s {"text":"----[ Universal Logic Modifier ]----","color":"gold","bold":true}
-tellraw @s {"text":""}
-tellraw @s [{"text":" Active Profile: ","color":"white"},{"nbt":"active_profile","storage":"custom_logic:main","color":"green","bold":true}]
-tellraw @s {"text":""}
-tellraw @s {"text":"  >> [Achievements]","color":"yellow","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config/achievements"}}
-tellraw @s {"text":"  >> [Entities]","color":"yellow","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config/entities"}}
-tellraw @s {"text":"  >> [Blocks]","color":"yellow","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config/blocks"}}
-tellraw @s {"text":"  >> [Items]","color":"yellow","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config/items"}}
-tellraw @s {"text":""}
-tellraw @s {"text":"  >> [Switch Profile]","color":"aqua","bold":true,"clickEvent":{"action":"suggest_command","value":"/function custom_logic:config/profiles"}}
-tellraw @s {"text":""}
-tellraw @s {"text":"------------------------------------","color":"gold"}
+# Close existing menu if already open
+execute if entity @s[tag=cl_config] run function custom_logic:menu/close
+
+# Tag player as in config menu
+tag @s add cl_config
+tag @s add cl_menu_main
+
+# Place barrel above player
+execute at @s run setblock ~ ~2 ~ minecraft:barrel{CustomName:'{"text":"Universal Logic Modifier","color":"gold","bold":true}'}
+
+# Summon invisible marker at barrel position for tracking
+execute at @s positioned ~ ~2 ~ run summon minecraft:marker ~ ~ ~ {Tags:["cl_barrel"]}
+
+# Fill barrel with main menu items
+execute at @e[type=minecraft:marker,tag=cl_barrel,sort=nearest,limit=1] run function custom_logic:menu/fill_main
+
+# Tell player to open it
+tellraw @s [{"text":"[ULM] ","color":"gold","bold":true},{"text":"Config barrel placed above you. Look up and right-click it!","color":"yellow"}]
