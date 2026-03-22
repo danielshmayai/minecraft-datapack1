@@ -6,9 +6,13 @@
 scoreboard objectives add cl_achieve dummy "Achievements Earned"
 scoreboard objectives add cl_ach_prev dummy "Previous Achievement Count"
 scoreboard objectives add cl_m_diamond minecraft.mined:minecraft.diamond_ore "Diamond Ore Mined"
+scoreboard objectives add cl_m_dia_ds minecraft.mined:minecraft.deepslate_diamond_ore "Deepslate Diamond Mined"
 scoreboard objectives add cl_m_iron minecraft.mined:minecraft.iron_ore "Iron Ore Mined"
+scoreboard objectives add cl_m_iron_ds minecraft.mined:minecraft.deepslate_iron_ore "Deepslate Iron Mined"
 scoreboard objectives add cl_m_gold minecraft.mined:minecraft.gold_ore "Gold Ore Mined"
+scoreboard objectives add cl_m_gold_ds minecraft.mined:minecraft.deepslate_gold_ore "Deepslate Gold Mined"
 scoreboard objectives add cl_temp dummy "Temp"
+scoreboard objectives add cl_mod dummy "Modulo Temp"
 
 # --- Initialize default storage (only if not already set) ---
 execute unless data storage custom_logic:main {active_profile:"a"} run data modify storage custom_logic:main active_profile set value "a"
